@@ -17,7 +17,7 @@
     </div>
 
 
-    <main class="flex w-full min-h-screen flex-col items-center bg-lime-400 lg:max-w-md ">
+    <main class="flex w-full min-h-screen flex-col items-center bg-slate-100 lg:max-w-md ">
         <div class="flex w-full max-w-sm grow flex-col justify-center p-5">
             <div class="text-center mb-5">
                 <!--LOGO MOVIL -->
@@ -41,10 +41,10 @@
                     <div>
                         <label class="relative flex mb-3">
                             <input
-                                class="form-input border-inherit peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-slate-800/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring focus:ring-slate-700 dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
+                            class="form-input peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-800 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
                                 placeholder="{{__('Name')}}" type="text" name="name"  id="name" value="{{ old('name') }}" />
                             <span
-                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-secondary">
+                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-5 transition-colors duration-200"
                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -60,10 +60,10 @@
                     <div>
                         <label class="relative flex mb-3">
                             <input
-                                class="form-input border-inherit peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-slate-800/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring focus:ring-slate-700 dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
+                            class="form-input peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-800 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
                                 placeholder="Email" type="email" name="email" id="email" value="{{ old('email') }}" />
                             <span
-                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-secondary">
+                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-5 transition-colors duration-200"
                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -79,10 +79,10 @@
                     <div>
                         <label class="relative flex mb-3">
                             <input
-                                class="form-input border-inherit peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-slate-800/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring focus:ring-slate-700 dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
+                                class="form-input peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-800 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
                                 placeholder="{{__('Password')}}" type="password" name="password" id="password" />
                             <span
-                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-secondary">
+                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-5 transition-colors duration-200"
                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -98,10 +98,10 @@
                     <div>
                         <label class="relative flex mb-3">
                             <input
-                                class="form-input border-inherit peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-slate-800/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring focus:ring-slate-700 dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
+                            class="form-input peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-800 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
                                 placeholder="{{__('Repeat Password')}}" type="password" name="password_confirmation" id="password_confirmation"  />
                             <span
-                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-secondary">
+                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-5 transition-colors duration-200"
                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -117,7 +117,7 @@
                 </div>
 
                 <button type="submit"
-                    class="btn mt-10 h-10 w-full bg-secondary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90">
+                class="btn mt-10 h-10 w-full bg-primary font-medium text-slate-950 hover:bg-secondary-focus focus:bg-secondary-focus  hover:text-white active:bg-secondary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
                     {{__('Sign In')}}
                 </button>
 
