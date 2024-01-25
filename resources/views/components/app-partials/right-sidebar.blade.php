@@ -128,7 +128,7 @@
                         Pinned Apps
                     </h2>
                     <div class="mt-3 flex space-x-3">
-                        <a href="{{ route('apps/kanban') }}" class="w-12 text-center">
+                        <a href="#" class="w-12 text-center">
                             <div class="avatar size-10">
                                 <div class="is-initial mask is-squircle bg-success text-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none"
@@ -158,51 +158,7 @@
                                 Analytics
                             </p>
                         </a>
-                        <a href="{{ route('apps/chat') }}" class="w-12 text-center">
-                            <div class="avatar size-10">
-                                <div class="is-initial mask is-squircle bg-info text-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <p
-                                class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700">
-                                Chat
-                            </p>
-                        </a>
-                        <a href="{{ route('apps/filemanager') }}" class="w-12 text-center">
-                            <div class="avatar size-10">
-                                <div class="is-initial mask is-squircle bg-error text-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <p
-                                class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700">
-                                Files
-                            </p>
-                        </a>
-                        <a href="{{ route('dashboards/banking-1') }}" class="w-12 text-center">
-                            <div class="avatar size-10">
-                                <div class="is-initial mask is-squircle bg-secondary text-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <p
-                                class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700">
-                                Banking
-                            </p>
-                        </a>
+                
                     </div>
                 </div>
 
