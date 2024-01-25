@@ -41,10 +41,10 @@
                     <div>
                         <label class="relative flex mb-3">
                             <input
-                            class="form-input peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-800 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
+                            class="form-input peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-300 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
                                 placeholder="{{__('Name')}}" type="text" name="name"  id="name" value="{{ old('name') }}" />
                             <span
-                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary">
+                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-slate-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-5 transition-colors duration-200"
                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -60,10 +60,10 @@
                     <div>
                         <label class="relative flex mb-3">
                             <input
-                            class="form-input peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-800 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
+                            class="form-input peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-300 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
                                 placeholder="Email" type="email" name="email" id="email" value="{{ old('email') }}" />
                             <span
-                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary">
+                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-slate-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-5 transition-colors duration-200"
                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -77,12 +77,14 @@
                     </div>
 
                     <div>
+                        <p class="text-xs text-slate-500 mb-2 px-2">{{__('Your password must contain a capital letter, at least one number and 8 characters.')}}</p>
                         <label class="relative flex mb-3">
+                            
                             <input
-                                class="form-input peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-800 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
+                                class="form-input peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-300 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
                                 placeholder="{{__('Password')}}" type="password" name="password" id="password" />
                             <span
-                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary">
+                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-slate-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-5 transition-colors duration-200"
                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -98,10 +100,10 @@
                     <div>
                         <label class="relative flex mb-3">
                             <input
-                            class="form-input peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-800 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
+                            class="form-input peer w-full rounded-lg bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-300 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
                                 placeholder="{{__('Repeat Password')}}" type="password" name="password_confirmation" id="password_confirmation"  />
                             <span
-                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary">
+                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-slate-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-5 transition-colors duration-200"
                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -118,14 +120,14 @@
 
                 <button type="submit"
                 class="btn mt-10 h-10 w-full bg-primary font-medium text-slate-950 hover:bg-secondary-focus focus:bg-secondary-focus  hover:text-white active:bg-secondary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
-                    {{__('Sign In')}}
+                    {{__('Register')}}
                 </button>
 
             </form>
             <div class="mt-4 text-center text-slate-700">
                 <p class="line-clamp-1">
                     <span>{{__('Already have an account?')}}</span>
-                    <a class="text-slate-950 transition-colors hover:text-slate-950-focus font-bold"
+                    <a class="text-slate-950 transition-colors hover:text-secondary-focus font-bold"
                         href="{{ route('login') }}">{{__('Sign In')}}
                     </a>
                 </p>
