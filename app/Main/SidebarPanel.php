@@ -27,9 +27,9 @@ class SidebarPanel
             'title' => 'Dashboards',
             'items' => [
                 [
-                    'dashboards_crm_analytics' => [
-                        'title' => 'CRM Analytics',
-                        'route_name' => 'dashboards/crm-analytics'
+                    'dashboards' => [
+                        'title' => 'Dashboard',
+                        'route_name' => 'dashboard'
                     ],
             
                 ],

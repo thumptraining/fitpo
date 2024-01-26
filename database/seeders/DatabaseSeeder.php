@@ -3,8 +3,13 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Blog\Category;
+use App\Models\Blog\Tag;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+
+use Illuminate\Support\Facades\Storage;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,17 +18,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        Storage::deleteDirectory('public/posts');
+        Storage::makeDirectory('public/posts');
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
-        DB::table('users')->insert([
-            'name' => 'Piniastudio',
-            'email' => 'help@piniastudio.com',
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
-        ]);
+        $this->call(UserSeeder::class);
+        Category::factory(4)->create();
+        Tag::factory(8)->create();
+        $this->call(PostSeeder::class);
+        
     }
 }

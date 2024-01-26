@@ -143,7 +143,10 @@
                                 Kanban
                             </p>
                         </a>
-                        <a href="{{ route('dashboards/crm-analytics') }}" class="w-12 text-center">
+
+                        <!-- Link menu -->
+
+                        <a href="#" class="w-12 text-center">
                             <div class="avatar size-10">
                                 <div class="is-initial mask is-squircle bg-warning text-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none"

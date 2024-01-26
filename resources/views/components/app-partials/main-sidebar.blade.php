@@ -5,12 +5,13 @@
         <div class="flex pt-4">
             <a href="/">
                 <img class="size-11 transition-transform duration-500 ease-in-out hover:rotate-[360deg]"
-                    src="{{ asset('images/app-logo.svg') }}" alt="logo" />
+                    src="{{ asset('images/logo-dark.svg') }}" alt="logo" />
             </a>
         </div>
 
         <!-- Main Sections Links -->
         <div class="is-scrollbar-hidden flex grow flex-col space-y-4 overflow-y-auto pt-6">
+            
             <!-- Dashobards -->
             <a href="#"
                 class="flex size-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 {{ $routePrefix === 'dashboards' ? 'text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 bg-primary/10' : 'hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25' }}"
@@ -25,7 +26,7 @@
                         d="M17.5 5h-1a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5Z" />
                 </svg>
             </a>
-
+        </div>
          
     </div>
 </div>
