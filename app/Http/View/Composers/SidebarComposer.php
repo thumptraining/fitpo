@@ -20,26 +20,20 @@ class SidebarComposer
             $routePrefix = explode('/', $pageName)[0] ?? '';
 
             switch ($routePrefix) {
-                case 'elements':
-                    $view->with('sidebarMenu', SidebarPanel::elements());
+                case 'posts.index':
+                    $view->with('sidebarMenu', SidebarPanel::posts());
                     break;
-                case 'components':
-                    $view->with('sidebarMenu', SidebarPanel::components());
+
+                case 'categories.index':
+                    $view->with('sidebarMenu', SidebarPanel::posts());
                     break;
-                case 'forms':
-                    $view->with('sidebarMenu', SidebarPanel::forms());
-                    break;
-                case 'layouts':
-                    $view->with('sidebarMenu', SidebarPanel::layouts());
-                    break;
-                case 'apps':
-                    $view->with('sidebarMenu', SidebarPanel::apps());
-                    break;
+                
                 case 'dashboards':
                     $view->with('sidebarMenu', SidebarPanel::dashboards());
                     break;
+                    
                 default:
-                    $view->with('sidebarMenu', SidebarPanel::dashboards());
+                $view->with('sidebarMenu', SidebarPanel::dashboards());
             }
             
             $view->with('allSidebarItems', SidebarPanel::all());

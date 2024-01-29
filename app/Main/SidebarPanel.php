@@ -5,21 +5,6 @@ namespace App\Main;
 
 class SidebarPanel
 {
-    public static function elements()
-    {
-        return [
-            'title' => 'Elements',
-            'items' => [
-                [
-                    'elements_avatar' => [
-                        'title' => 'Avatar',
-                        'route_name' => '#'
-                    ],
-                    
-                ]
-            ]
-        ];
-    }
 
     public static function dashboards()
     {
@@ -39,7 +24,29 @@ class SidebarPanel
         ];
     }
 
+    public static function posts()
+    {
+        return [
+            'title' => 'Content',
+            'items' => [
+                [
+                    'posts.index' => [
+                        'title' => 'Manage Blog',
+                        'route_name' => 'posts.index'
+                    ],
+
+                    'categories.index' => [
+                        'title' => 'Manage category',
+                        'route_name' => 'categories.index'
+                    ],
+
+                ],
+       
+            ]
+        ];
+    }
+
     public static function all(){
-        return [self::dashboards(), self::elements()];
+        return [self::dashboards(), self::posts(),];
     }
 }

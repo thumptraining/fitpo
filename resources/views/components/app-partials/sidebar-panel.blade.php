@@ -1,12 +1,12 @@
 <div class="sidebar-panel">
-    <div class="flex h-full grow flex-col bg-white pl-[var(--main-sidebar-width)]">
+    <div class="flex h-full grow flex-col bg-slate-800 pl-[var(--main-sidebar-width)]">
         <!-- Sidebar Panel Header -->
         <div class="flex h-18 w-full items-center justify-between pl-4 pr-1">
-            <p class="text-base tracking-wider text-slate-800">
-                {{ $sidebarMenu['title'] }}
+            <p class="text-base tracking-wider text-slate-100">
+                {{__( $sidebarMenu['title']) }}
             </p>
             <button @click="$store.global.isSidebarExpanded = false"
-                class="btn size-7 rounded-full p-0 text-primary hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 xl:hidden">
+                class="btn size-7 rounded-full p-0 text-primary hover:bg-slate-100/80 focus:bg-slate-100/80 active:bg-slate-100/25 xl:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="size-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -24,12 +24,12 @@
                     @foreach ($menuItems as $keyMenu => $menu)
                         @if (isset($menu['submenu']))
                             <li x-data="accordionItem('{{ $keyMenu }}')">
-                                <a :class="expanded ? 'text-slate-800 font-semibold' :
+                                <a :class="expanded ? 'text-slate-100 font-semibold' :
                                     'text-slate-600'"
                                     @click="expanded = !expanded"
-                                    class="flex items-center justify-between py-2 text-xs+ tracking-wide  outline-none transition-[color,padding-left] duration-300 ease-in-out hover:text-slate-800 "
+                                    class="flex items-center justify-between py-2 text-xs+ tracking-wide  outline-none transition-[color,padding-left] duration-300 ease-in-out hover:text-slate-100 "
                                     href="javascript:void(0);">
-                                    <span>{{ $menu['title'] }}</span>
+                                    <span>{{ __($menu['title'] )}}</span>
                                     <svg :class="expanded && 'rotate-90'" xmlns="http://www.w3.org/2000/svg"
                                         class="size-4 text-slate-400 transition-transform ease-in-out" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
@@ -44,12 +44,12 @@
                                             <a href="{{ route($submenu['route_name']) }}"
                                                 class="flex items-center justify-between p-2 text-xs+ tracking-wide
                                                  outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4
-                                                 {{ $submenu['route_name'] === $pageName ? 'text-primary font-medium' : 'text-slate-600 hover:text-slate-800' }}">
+                                                 {{ $submenu['route_name'] === $pageName ? 'text-primary font-medium' : 'text-slate-100 hover:text-primary' }}">
                                                 <div class="flex items-center space-x-2">
                                                     <div
                                                         class="h-1.5 w-1.5 rounded-full border border-current opacity-40">
                                                     </div>
-                                                    <span>{{ $submenu['title'] }}</span>
+                                                    <span>{{ __($submenu['title']) }}</span>
                                                 </div>
                                             </a>
                                         </li>
@@ -59,8 +59,8 @@
                         @else
                             <li @if ($menu['route_name'] === $pageName) x-init="$el.scrollIntoView({block:'center'});" @endif>
                                 <a href="{{ route($menu['route_name']) }}"
-                                    class="flex text-xs+ py-2  tracking-wide outline-none transition-colors duration-300 ease-in-out {{ $menu['route_name'] === $pageName ? 'text-primary font-medium' : 'text-slate-600  hover:text-slate-800' }}">
-                                    {{ $menu['title'] }}
+                                    class="flex text-xs+ py-2  tracking-wide outline-none transition-colors duration-300 ease-in-out {{ $menu['route_name'] === $pageName ? 'text-primary font-medium' : 'text-slate-200  hover:text-primary' }}">
+                                    {{ __($menu['title']) }}
                                 </a>
                             </li>
                         @endif

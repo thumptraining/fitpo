@@ -1,6 +1,7 @@
 <x-app-layout title="Blog Details" is-header-blur="true">
     <main class="main-content w-full px-[var(--margin-x)]">
         <div class="grid grid-cols-12 lg:gap-6">
+            
             <div class="col-span-12 pt-6 lg:col-span-8 lg:pb-6">
                 <div class="card p-4 lg:p-6">
                     <!-- Author -->
@@ -682,7 +683,9 @@
                         </div>
                     </div>
                 </div>
+
             </div>
+
             <div class="col-span-12 py-6 lg:sticky lg:bottom-0 lg:col-span-4 lg:self-end">
                 <div class="card">
                     <div class="h-24 rounded-t-lg bg-primary">

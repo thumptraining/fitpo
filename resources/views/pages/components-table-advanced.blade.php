@@ -35,6 +35,7 @@
             <li>Table Advanced</li>
           </ul>
         </div>
+        
         <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
           <!-- Users Table -->
           <div>

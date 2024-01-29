@@ -61,7 +61,7 @@
 -->
     <div id="x-teleport-target"></div>
 
-    <script>
+    <script >
         window.addEventListener("DOMContentLoaded", () => Alpine.start());
     </script>
 

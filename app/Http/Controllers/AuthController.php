@@ -30,7 +30,7 @@ class AuthController extends Controller
         $validated = $validator->validated();
 
         if (\Auth::attempt(array('email' => $validated['email'], 'password' => $validated['password']))) {
-            return redirect()->route('index');
+            return redirect()->route('dashboard');
         } else {
             $validator->errors()->add(
                 'password', 'The password does not match with username'
@@ -61,7 +61,7 @@ class AuthController extends Controller
 
         auth()->login($user);
 
-        return redirect()->route('index');
+        return redirect()->route('dashboard');
     }
 
     public function logout()

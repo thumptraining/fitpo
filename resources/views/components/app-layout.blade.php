@@ -82,6 +82,8 @@
         {{ $script }}
     @endisset
 
+    
+
 </body>
 
 </html>
