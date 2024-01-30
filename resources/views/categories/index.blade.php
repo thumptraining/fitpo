@@ -5,6 +5,7 @@
           
           <!-- categories Table -->
           <div>
+            
             @if (session('info'))
               <div class="my-5">
                 <div x-data="{isShow:true}" :class="!isShow && 'opacity-0 transition-opacity duration-300'" class="alert flex items-center justify-between overflow-hidden rounded-lg border border-success text-white bg-success">

@@ -107,7 +107,12 @@
                         </div>
                     </div>
                 </div>
-                <img src="{{ Storage::url($post->image->url) }}" class="size-28 rounded-lg object-cover object-center" alt="image" />
+                @if (empty($post->image->url))
+                    <img src="{{ asset('images/fondo.png') }}" class="size-28 rounded-lg object-cover object-center" alt="image" />
+                @else
+                    <img src="{{ Storage::url($post->image->url) }}" class="size-28 rounded-lg object-cover object-center" alt="image" />
+                @endif
+                
             </div>
         @endforeach
 

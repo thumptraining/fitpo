@@ -18,8 +18,11 @@
       
         <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
             <div class="card py-5 px-4  sm:px-5">
-                <form action="{{route('posts.store')}}">
+                <form action="{{route('posts.store')}}" method="POST">
+                    @csrf
 
+                    <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
+                    <!--Name-->
                     <div class="mx-5 my-5">
                         <label class="block">
                             <span>{{__('Title')}}</span>
@@ -36,7 +39,7 @@
                             <span class="text-error text-xs my-3">{{ $message }}</span>
                         @enderror
                     </div>
-
+                    <!--slug-->
                     <div class="mx-5 my-5">
                         <label class="block">
                             <span>{{__('Slug')}}</span>
@@ -53,28 +56,32 @@
                             <span class="text-error text-xs my-3">{{ $message }}</span>
                         @enderror
                     </div>
-
+                    <!--Category-->
                     <div class="mx-5 my-5">
                         <label class="block">
                             <span>{{__('Category')}}</span>
                             <select
                               class="form-select mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:bg-navy-700 dark:hover:border-navy-400 dark:focus:border-accent"
+                              name="category_id" id="category_id"
                             >
                                 <option disabled>{{__('Choose an option')}}</option>
                                 @foreach ($categories as $category)
-                                    <option value="{{$category->name}}">{{__($category->name)}}</option>
+                                    <option value="{{$category->id}}">{{__($category->name)}}</option>
                                 @endforeach
                               
                               
                             </select>
                         </label>
+                        @error('category_id')
+                            <span class="text-error text-xs my-3">{{ $message }}</span>
+                        @enderror
                     </div>
 
+                    <!--tags-->
                     <div class="mx-5 my-5">
                         <label class="block">
                             <span>{{__('Tags')}}</span>
-                            <select
-                                x-init="$el._tom = new Tom($el,{
+                            <select  x-init="$el._tom = new Tom($el,{
                                     plugins: {
                                     'clear_button':{
                                         'title':'Remove all selected options',
@@ -84,21 +91,24 @@
                                     create: true
                                 })"
                               class="mt-1.5 w-full"
+                              
                               multiple
-                              placeholder="Select a state..."
-                              autocomplete="off"
+                              name="tags[]"
+
                             >
                                 <option disabled>{{__('Choose an option')}}</option>
 
                                 @foreach ($tags as $tag)
-                                <option value="{{$tag->name}}">{{__($tag->name)}}</option>
+                                <option value="{{$tag->id}}">{{__($tag->name)}}</option>
                                 @endforeach
-                              
                             
                             </select>
-                          </label>
+                        </label>
+                        @error('tags')
+                            <span class="text-error text-xs my-3">{{ $message }}</span>
+                        @enderror
                     </div>
-
+                    <!--status-->
                     <div class="mx-5 my-5">
                         <h2 class="my-3">Estado</h2>
 
@@ -114,18 +124,22 @@
                             <p>Borrador</p>
                         </label>
                           
-                          <label class="inline-flex items-center space-x-2">
-                            <input
-                              class="form-radio is-basic size-5 rounded-full border-slate-400/70 checked:border-primary checked:bg-primary hover:border-primary focus:border-primary dark:border-navy-400 dark:checked:border-accent dark:checked:bg-accent dark:hover:border-accent dark:focus:border-accent"
-                              name="status"
-                              type="radio"
-                              value="2"
-                            />
-                            <p>Publicar</p>
-                          </label>
+                        <label class="inline-flex items-center space-x-2">
+                        <input
+                            class="form-radio is-basic size-5 rounded-full border-slate-400/70 checked:border-primary checked:bg-primary hover:border-primary focus:border-primary dark:border-navy-400 dark:checked:border-accent dark:checked:bg-accent dark:hover:border-accent dark:focus:border-accent"
+                            name="status"
+                            type="radio"
+                            value="2"
+                        />
+                        <p>Publicar</p>
+                        </label>
+
+                        @error('status')
+                            <span class="text-error text-xs my-3">{{ $message }}</span>
+                        @enderror
                  
                     </div>
-
+                    <!--Extract-->
                     <div class="mx-5 my-5">
                         <label class="block">
 
@@ -139,9 +153,14 @@
                               class="form-textarea w-full resize-none rounded-lg border border-slate-300 bg-transparent p-2.5 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent mt-2"
                               
                             ></textarea>
-                          </label>
-                    </div>
+                        </label>
 
+                        @error('extract')
+                            <span class="text-error text-xs my-3">{{ $message }}</span>
+                        @enderror
+
+                    </div>
+                    <!--Body-->
                     <div class="mx-5 my-5">
                         <label class="block">
 
@@ -156,7 +175,15 @@
                             </div>
                             
                         </label>
+
+                        @error('body')
+                            <span class="text-error text-xs my-3">{{ $message }}</span>
+                        @enderror
                 
+                    </div>
+
+                    <div class="mx-5 my-5">
+                        <button class="w-full btn bg-success font-medium text-white hover:bg-success-focus hover:shadow-lg hover:shadow-success/50 focus:bg-success-focus focus:shadow-lg focus:shadow-success/50 active:bg-success-focus/90" type="submit">Crear Post</button>
                     </div>
  
                 </form>

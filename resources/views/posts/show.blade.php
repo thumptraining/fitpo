@@ -46,11 +46,17 @@
                         <h3 class="mt-1">
                             {{ $post->extract}}
                         </h3>
-                        <img class="mt-5 h-80 w-full rounded-lg object-cover object-center"  src="{{ Storage::url($post->image->url) }}" alt="{{ $post->name }}" />
-                      
+
+                        @if (empty($post->image->url))
+                            <img src="{{ asset('images/fondo.png') }}" class="mt-5 h-80 w-full rounded-lg object-cover object-center" alt="{{ $post->name }}" />
+                        @else
+                            <img src="{{ Storage::url($post->image->url) }}" class="mt-5 h-80 w-full rounded-lg object-cover object-center" alt="{{ $post->name }}" />
+                        @endif
+
+                        
 
                         <div class="mt-10 mb-5">
-                            {{ $post->body}}
+                            {!! $post->body !!}
                         </div>
                        
                     </div>

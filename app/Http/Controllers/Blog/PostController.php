@@ -7,7 +7,7 @@ use App\Models\Blog\Category;
 use App\Models\Blog\Post;
 use App\Models\Blog\Tag;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\StorePostRequest;
 
 
 class PostController extends Controller
@@ -35,9 +35,16 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        //
+        $post = Post::create($request->all());
+	
+        if($request->tags){
+            $post->tags()->sync($request->tags);
+        }
+
+        return redirect()->route('posts.index')
+			->with('info', 'Post was created successfully');
     }
 
     /**
