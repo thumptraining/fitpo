@@ -13,6 +13,8 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'slug', 'extract', 'body', 'status', ];
+
     //relacion uno a muchos inversa
     public function user(){
         return $this->belongsTo(User::class);

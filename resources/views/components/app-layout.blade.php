@@ -15,9 +15,12 @@
         @endisset
     </title>
 
+    @livewireStyles
+
     <!-- CSS & JS Assets -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,9 +39,12 @@
         {{ $head }}
     @endisset
 
+    
+
 </head>
 
 <body x-data x-bind="$store.global.documentBody"
+
     class="@isset($isSidebarOpen) {{ $isSidebarOpen === 'true' ? 'is-sidebar-open' : '' }} @endisset @isset($isHeaderBlur) {{ $isHeaderBlur === 'true' ? 'is-header-blur' : '' }} @endisset @isset($hasMinSidebar) {{ $hasMinSidebar === 'true' ? 'has-min-sidebar' : '' }} @endisset  @isset($headerSticky) {{ $headerSticky === 'false' ? 'is-header-not-sticky' : '' }} @endisset">
 
     <!-- App preloader-->
@@ -68,20 +74,23 @@
 
     </div>
 
+   
+    
     <!--
   This is a place for Alpine.js Teleport feature
   @see https://alpinejs.dev/directives/teleport
 -->
     <div id="x-teleport-target"></div>
-
-    <script>
-        window.addEventListener("DOMContentLoaded", () => Alpine.start());
-    </script>
+    
+    
+    <script defer> window.addEventListener("DOMContentLoaded", () => Alpine.start());  </script>
 
     @isset($script)
         {{ $script }}
     @endisset
 
+    @livewireScripts
+   
     
 
 </body>

@@ -1,5 +1,21 @@
 {   
 
+    "Edit tag":"Editar etiqueta",
+    "Tag was created successfully":"La etiqueta se creó correctamente",
+    "Tag was updated successfully": "La etiqueta se actualizó correctamente",
+    "The tag was successfully deleted": "La etiqueta fue eliminada exitosamente.",
+    "There are no recipes yet":"Aún no hay recetas",
+    "There is no post yet":"Aún no hay post",
+
+    "Create Post":"Crear Post",
+    "Choose an option":"Elige una opción",
+
+    "Enter the title of the post or recipe":"Ingrese el título del post o receta",
+    "Title":"Título",
+
+    "Manage tags": "Administrar etiquetas",
+    "Create tags": "Crear etiquetas",
+    "Recipes":"Recetas",
     "The category was successfully deleted":"La categoría se elimino correctamente",
     "Category was created successfully":"La categoría se creó con éxito",
     "Category was updated successfully":"La categoría se actualizó con éxito",

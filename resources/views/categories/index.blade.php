@@ -75,7 +75,7 @@
                       <tr class="border-y border-transparent border-b-slate-200">
 
                         <td class="whitespace-nowrap px-3 py-3 font-medium text-slate-700 lg:px-5">
-                          {{ $category->name}}
+                          {{ __($category->name)}}
                         </td>
 
                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
@@ -84,16 +84,23 @@
 
                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
                           <div class="flex">
-                            <a href="{{route('categories.edit', $category)}}" class="btn size-9 rounded-full bg-success p-0 font-medium text-white hover:bg-success-focus focus:bg-success-focus active:bg-success-focus/90 mr-2">
+                            
+                            @if ($category->name == 'Recipes')
+                              <div></div>
+                            @else
+                              <a href="{{route('categories.edit', $category)}}" class="btn size-9 rounded-full bg-success p-0 font-medium text-white hover:bg-success-focus focus:bg-success-focus active:bg-success-focus/90 mr-2">
                               <i class="fa-solid fa-pen"></i>
-                            </a>
-  
-                            <form action="{{route('categories.destroy', $category)}}" method="POST">
-                              @csrf @method('delete')
-                              <button type="submit" class="btn size-9 rounded-full bg-error p-0 font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90">
-                                <i class="fa-solid fa-trash"></i>
-                              </button>
-                            </form>
+                              </a>
+
+                              <form action="{{route('categories.destroy', $category)}}" method="POST">
+                                @csrf @method('delete')
+                                <button type="submit" class="btn size-9 rounded-full bg-error p-0 font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90">
+                                  <i class="fa-solid fa-trash"></i>
+                                </button>
+                              </form>
+                            @endif
+
+                            
   
                           </div>
                           

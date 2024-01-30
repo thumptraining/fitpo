@@ -3,6 +3,7 @@
 use App\Http\Controllers\Blog\CategoryController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Blog\PostController;
+use App\Http\Controllers\Blog\TagController;
 
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -34,5 +35,8 @@ Route::middleware([
 
     Route::resource('categories', CategoryController::class)
 	->names('categories');
+
+    Route::resource('tags', TagController::class)
+	->names('tags');
 });
 

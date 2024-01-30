@@ -40,6 +40,11 @@ class SidebarPanel
                         'route_name' => 'categories.index'
                     ],
 
+                    'tags.index' => [
+                        'title' => 'Manage tags',
+                        'route_name' => 'tags.index'
+                    ],
+
                 ],
        
             ]
