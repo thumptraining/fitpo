@@ -15,6 +15,8 @@
         @endisset
     </title>
 
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
     @livewireStyles
 
     <!-- CSS & JS Assets -->
