@@ -18,6 +18,16 @@ class CategorySeeder extends Seeder
             'slug' => 'recipes',
         ]);
 
-        Category::factory(5)->create();
+        Category::create([
+            'name' => 'Running',
+            'slug' => 'running',
+        ]);
+
+        Category::create([
+            'name' => 'Fitness',
+            'slug' => 'fitness',
+        ]);
+
+       
     }
 }

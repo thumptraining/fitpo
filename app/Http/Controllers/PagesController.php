@@ -11,9 +11,7 @@ class PagesController extends Controller
     public function dashboards()
 
     {
-        $posts = Post::where('status', 2)->latest('id')->paginate(4);
-
-        return view('dashboard/dashboard', compact('posts'));
+        return view('dashboard/dashboard');
     }
 
 

@@ -4,8 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Blog\Category;
-use App\Models\Blog\Tag;
 use Illuminate\Database\Seeder;
 
 use Illuminate\Support\Facades\Storage;
@@ -23,8 +21,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UserSeeder::class);
         $this->call(CategorySeeder::class);
-        Tag::factory(8)->create();
-        $this->call(PostSeeder::class);
+        $this->call(TagSeeder::class);
+        //$this->call(PostSeeder::class);
         
     }
 }

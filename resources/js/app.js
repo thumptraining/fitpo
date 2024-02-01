@@ -1,7 +1,3 @@
-
-import Alpine from "alpinejs";
-
-
 // AlpineJS Plugins
 import persist from "@alpinejs/persist"; // @see https://alpinejs.dev/plugins/persist
 import collapse from "@alpinejs/collapse"; // @see https://alpinejs.dev/plugins/collapse
@@ -96,8 +92,6 @@ import clipboard from "./magics/clipboard";
 hljs.registerLanguage("xml", xml);
 hljs.configure({ ignoreUnescapedHTML: true });
 
-// Register plugin image preview for filepond
-FilePond.registerPlugin(FilePondPluginImagePreview);
 
 window.hljs = hljs;
 window.dayjs = dayjs;
@@ -106,7 +100,6 @@ window.Swiper = Swiper;
 window.Sortable = Sortable;
 window.ApexCharts = ApexCharts;
 window.Gridjs = Gridjs;
-window.FilePond = FilePond;
 window.flatpickr = flatpickr;
 
 window.Tom = Tom;

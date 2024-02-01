@@ -1,5 +1,16 @@
 {   
 
+    "Post was delete successfully": "La publicación se elimino correctamente.",
+    "Draft":"Borrador",
+    "Post was update successfully": "La publicación se actualizó correctamente.",
+    "Post":"Publicar",
+    "Edit Post": "Editar publicación",
+    "Upload image": "Subir imagen",
+    "Post was created successfully": "La publicación se creó correctamente",
+    "Choose your cover image":"Elige tu imagen de portada",
+    "We work hard to bring you the best training information...": "Trabajamos duro para entregarte la mejor información sobre entrenamiento...",
+    "Coming soon":"Pronto",
+    "More post soon": "Pronto más publicaciones",
     "Edit tag":"Editar etiqueta",
     "Tag was created successfully":"La etiqueta se creó correctamente",
     "Tag was updated successfully": "La etiqueta se actualizó correctamente",
@@ -7,7 +18,7 @@
     "There are no recipes yet":"Aún no hay recetas",
     "There is no post yet":"Aún no hay post",
 
-    "Create Post":"Crear Post",
+    "Create Post":"Crear publicación",
     "Choose an option":"Elige una opción",
 
     "Enter the title of the post or recipe":"Ingrese el título del post o receta",

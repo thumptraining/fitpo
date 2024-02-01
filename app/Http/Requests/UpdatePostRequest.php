@@ -4,17 +4,16 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorePostRequest extends FormRequest
+class UpdatePostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
-    {   
-     
+    {
+       
         return true;
-     
-        
+       
     }
 
     /**
@@ -22,13 +21,15 @@ class StorePostRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules() 
+    public function rules(): array
     {
+        $post = $this->route()->parameter('post');
 
         $rules = [
             'name' => 'required', 
-            'slug'  => 'required|unique:posts', 
+            'slug'  => 'required|unique:posts,slug,' . $post->id, 
             'status' => 'required|in:1,2', 
+            
         ];
 
         if($this->status == 2){
@@ -42,4 +43,5 @@ class StorePostRequest extends FormRequest
 
         return $rules;
     }
+    
 }

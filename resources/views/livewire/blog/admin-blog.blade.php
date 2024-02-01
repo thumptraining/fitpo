@@ -94,15 +94,19 @@
                         </div>
                         <div class="flex">
 
-                            <button
+                            
+                            <a  href="{{route('posts.edit', $post)}}"
                                 class="btn size-7 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25">
                                 <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
+                            </a>
 
-                            <button
-                                class="btn size-7 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25">
+                            <form action="{{route('posts.destroy', $post)}}" method="POST">
+                                @csrf @method('DELETE')
+                                <button type="submit" class="btn size-7 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25">
                                 <i class="fa-solid fa-trash hover:text-red-600"></i>
                             </button>
+                            </form>
+                            
 
                         </div>
                     </div>

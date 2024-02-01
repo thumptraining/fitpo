@@ -18,6 +18,7 @@
 
             <!-- Right: Header buttons -->
             <div class="-mr-1.5 flex items-center space-x-2">
+                
                 <!-- Mobile Search Toggle -->
                 <button @click="$store.global.isSearchbarActive = !$store.global.isSearchbarActive"
                     class="btn size-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 sm:hidden">

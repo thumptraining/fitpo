@@ -34,9 +34,20 @@
                                 </div>
                             </div>
 
+                            <div class="flex space-x-3">
+                                <div class="hidden sm:flex">
+                                  <a href="{{route('posts.index')}}" class="btn w-36 py-3 bg-slate-800 text-primary hover:bg-secondary hover:text-white focus:bg-secondary  focus:text-white active:bg-secondary active:text-white dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
+                                    <i class="fa-solid fa-circle-chevron-left mr-2 text-xl"></i> {{__('Back')}}
+                                  </a>
+                                  
+                                </div>
+        
+                            </div>
+
                         </div>
    
                     </div>
+
 
                     <!-- Blog Post -->
                     <div class="mt-6 font-inter text-base text-slate-600">

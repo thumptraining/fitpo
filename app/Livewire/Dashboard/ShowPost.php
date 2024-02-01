@@ -16,9 +16,8 @@ class ShowPost extends Component
     
     public function render()
     {
-        $category = Category::where('name', '!=', 'Recipes')->get();
-        $posts = Post::where('status', 2)-> latest('id')->paginate(4);
-
-        return view('livewire.dashboard.show-post', compact('posts', 'category'));
+      
+        $posts = Post::where('status', 2)->take(4)->get();
+        return view('livewire.dashboard.show-post', compact('posts'));
     }
 }

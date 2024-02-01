@@ -8,6 +8,8 @@ use App\Models\Blog\Post;
 use App\Models\Blog\Tag;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\UpdatePostRequest;
+use Illuminate\Support\Facades\Storage;
 
 
 class PostController extends Controller
@@ -36,8 +38,17 @@ class PostController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(StorePostRequest $request)
-    {
+    {  
+
         $post = Post::create($request->all());
+
+        if($request->file('cover')){
+           $url = Storage::put('posts', $request->file('cover'));
+
+           $post->image()->create([
+                'url' => $url
+           ]);
+        }
 	
         if($request->tags){
             $post->tags()->sync($request->tags);
@@ -65,24 +76,52 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Post $post)
     {
-        //
+
+        $categories = Category::all();
+		$tags = Tag::all();
+
+        return view('posts.edit', compact('post','categories', 'tags'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $post ->update($request->all());
+
+        if($request->file('cover')){
+           $url = Storage::put('posts', $request->file('cover'));
+
+           if($post->image){
+                Storage::delete($post->image->url);
+                $post->image->update([
+                    'url' => $url
+                ]);
+           }else{
+            $post->image->create([
+                'url' => $url
+            ]);
+           }
+        }
+
+        if($request->tags){
+            $post->tags()->sync($request->tags);
+        }
+
+        return redirect()->route('posts.index')
+			->with('info', 'Post was update successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('posts.index')
+        ->with('info', 'Post was delete successfully');
     }
 }

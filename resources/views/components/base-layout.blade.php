@@ -18,6 +18,9 @@
         
     </title>
 
+    @livewireStyles
+
+
     <!-- CSS & JS Assets -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -68,6 +71,8 @@
     @isset($script)
         {{ $script }}
     @endisset
+
+    @livewireScripts
 
 </body>
 

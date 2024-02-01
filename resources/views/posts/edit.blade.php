@@ -13,22 +13,29 @@
             <a href="{{route('posts.index')}}" class="btn w-24 py-3 bg-slate-800 text-primary hover:bg-secondary hover:text-white focus:bg-secondary  focus:text-white active:bg-secondary active:text-white dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25 text-xs">
                 <i class="fa-solid fa-circle-chevron-left mr-2 text-lg"></i> {{__('Back')}}
             </a>
+            
             <h2 class="text-xl font-medium text-slate-800 lg:text-2xl">
-                 {{__('Create Post')}}
+              {{__('Edit Post')}}
             </h2>
         </div>
 
     
         <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
             <div class="card py-5 px-4  sm:px-5">
-                <form action="{{route('posts.store')}}" method="POST" enctype="multipart/form-data">
-                    @csrf
+                <form action="{{route('posts.update', $post)}}" method="POST" enctype="multipart/form-data">
+                    @csrf @method('PUT')
+
 
                     <!--FOTO-->
                     <div class="card">
 
                         <div class="p-2.5">
-                          <img id="picture" src="{{asset('images/fondo.png')}}" class="h-52 w-full lg:w-2/4 rounded-lg object-cover object-center mx-auto" alt="image">
+                            @if ($post->image)
+                                <img id="picture" src="{{Storage::url($post->image->url)}}" class="h-52 w-full lg:w-2/4 rounded-lg object-cover object-center mx-auto" alt="image">
+                            @else
+                                <img id="picture" src="{{asset('images/fondo.png')}}" class="h-52 w-full lg:w-2/4 rounded-lg object-cover object-center mx-auto" alt="image">
+                            @endif
+                          
                         </div>
 
                         <div class="flex grow flex-col px-4 pb-5 pt-1 text-center sm:px-5">
@@ -47,6 +54,7 @@
                                     id="cover"
                                     accept="image/*"
                                     class="pointer-events-none absolute inset-0 h-full w-full opacity-0"
+                                    
                                     />
                                     <div class="flex items-center space-x-2">
                                     <svg
@@ -88,13 +96,14 @@
                               type="text"
                               name="name"
                               id="name"
-                              value="{{ old('name') }}"
+                              value="{{ $post->name }}"
                             />
                         </label>
                         @error('name')
                             <span class="text-tiny+ text-error">{{ $message }}</span>
                         @enderror
                     </div>
+
                     <!--slug-->
                     <div class="mx-5 my-5">
                         <label class="block">
@@ -105,7 +114,7 @@
                               name="slug"
                               id="slug"
                               readonly
-                              value="{{ old('slug') }}"
+                              value="{{$post->slug}}"
                             />
                         </label>
                         @error('slug')
@@ -120,8 +129,9 @@
                             <select
                               class="form-select mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:bg-navy-700 dark:hover:border-navy-400 dark:focus:border-accent"
                               name="category_id" id="category_id"
+                              
                             >
-                                <option disabled>{{__('Choose an option')}}</option>
+                                <option value="{{ $post->category->id }}" disabled>{{ __($post->category->name) }}</option>
                                 @foreach ($categories as $category)
                                     <option value="{{$category->id}}">{{__($category->name)}}</option>
                                 @endforeach
@@ -153,10 +163,8 @@
                               name="tags[]"
 
                             >
-                                <option disabled>{{__('Choose an option')}}</option>
-
                                 @foreach ($tags as $tag)
-                                <option value="{{$tag->id}}">{{__($tag->name)}}</option>
+                                    <option value="{{$tag->id}}">{{__($tag->name)}}</option>
                                 @endforeach
                             
                             </select>
@@ -180,7 +188,7 @@
                               id="extract"
                               class="form-textarea w-full resize-none rounded-lg border border-slate-300 bg-transparent p-2.5 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent mt-2"
                               
-                            ></textarea>
+                            >{{$post->extract}}</textarea>
                         </label>
 
                         @error('extract')
@@ -197,8 +205,8 @@
                             
                             <div class="my-3">
                                 <div class="ql-header-filled w-full">
-                                    <input type="hidden" id="quillContent" name="body">
-                                    <div id="body"  class="h-48"></div>
+                                    <input type="hidden" id="quillContent" name="body" value="{{$post->body}}">
+                                    <div id="body"  class="h-48">{!! $post->body !!}</div>
                                 </div>
     
                             </div>
@@ -224,7 +232,7 @@
                               type="radio"
                               value="1"
                             />
-                            <p>Borrador</p>
+                            <p>{{__("Draft")}}</p>
                         </label>
                           
                         <label class="inline-flex items-center space-x-2">
@@ -234,7 +242,7 @@
                             type="radio"
                             value="2"
                         />
-                        <p>Publicar</p>
+                        <p>{{__("Post")}}</p>
                         </label>
 
                         @error('status')
@@ -244,7 +252,7 @@
                     </div>
 
                     <div class="mx-5 my-5">
-                        <button class="w-full btn bg-success font-medium text-white hover:bg-success-focus hover:shadow-lg hover:shadow-success/50 focus:bg-success-focus focus:shadow-lg focus:shadow-success/50 active:bg-success-focus/90" type="submit">Crear Post</button>
+                        <button class="w-full btn bg-success font-medium text-white hover:bg-success-focus hover:shadow-lg hover:shadow-success/50 focus:bg-success-focus focus:shadow-lg focus:shadow-success/50 active:bg-success-focus/90" type="submit">{{__("Create Post")}}</button>
                     </div>
  
                 </form>
