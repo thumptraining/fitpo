@@ -54,4 +54,41 @@ class SidebarPanel
     public static function all(){
         return [self::dashboards(), self::posts(),];
     }
+
+    public static function user_posts()
+    {
+        return [
+            'title' => 'Blog',
+            'items' => [
+                [
+                    'content' => [
+                        'title' => 'Education',
+                        'route_name' => 'user_posts'
+                    ],
+            
+                ],
+           
+               
+            ]
+        ];
+    }
+
+    public static function user_recipes()
+    {
+        return [
+            'title' => 'Recipes',
+            'items' => [
+                [
+                    'content' => [
+                        'title' => 'Healthy recipes',
+                        'route_name' => 'user_recipes'
+                    ],
+            
+                ],
+           
+               
+            ]
+        ];
+    }
+
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon-thump.png') }}" />
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport"

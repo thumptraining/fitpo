@@ -19,12 +19,28 @@
                 <i class="fa-solid fa-house text-xl"></i>
             </a>
 
-            <!-- Contenido -->
+            <!-- administracion de post-->
             <a href="{{route('posts.index')}}"
                 class="flex size-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 {{ $routePrefix === 'posts.index' ? 'text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 bg-primary/10' : 'hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25' }}"
                 x-tooltip.placement.right="'Blog'">
                 <i class="fa-solid fa-book-open text-xl"></i>   
             </a>
+
+            <!-- Contenido cliente-->
+            <a href="{{route('user_posts')}}"
+                class="flex size-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 {{ $routePrefix === 'user_posts' ? 'text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 bg-primary/10' : 'hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25' }}"
+                x-tooltip.placement.right="'Blog'">
+                <i class="fa-solid fa-newspaper text-xl"></i>
+            </a>
+
+            <!-- recetas cliente-->
+            <a href="{{route('user_recipes')}}"
+                class="flex size-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 {{ $routePrefix === 'user_recipes' ? 'text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 bg-primary/10' : 'hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25' }}"
+                x-tooltip.placement.right="'Blog'">
+                <i class="fa-solid fa-utensils text-xl"></i>
+            </a>
+
+
 
         </div>
          

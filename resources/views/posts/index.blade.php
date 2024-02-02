@@ -21,7 +21,8 @@
                   </div>
                 </div>
               </div>
-            @endif
+          @endif
+          
         @livewire('blog.admin-blog')
    
     </main>

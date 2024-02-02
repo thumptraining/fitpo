@@ -31,7 +31,15 @@ class SidebarComposer
                 case 'tags.index':
                     $view->with('sidebarMenu', SidebarPanel::posts());
                     break;
-                    
+
+                case 'user_posts':
+                    $view->with('sidebarMenu', SidebarPanel::user_posts());
+                    break;
+
+                case 'user_recipes':
+                    $view->with('sidebarMenu', SidebarPanel::user_recipes());
+                    break;
+
                 
                 case 'dashboards':
                     $view->with('sidebarMenu', SidebarPanel::dashboards());

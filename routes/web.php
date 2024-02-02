@@ -3,6 +3,7 @@
 use App\Http\Controllers\Blog\CategoryController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Blog\PostController;
+use App\Http\Controllers\Blog\PostUserController;
 use App\Http\Controllers\Blog\TagController;
 
 use GuzzleHttp\Middleware;
@@ -38,5 +39,9 @@ Route::middleware([
 
     Route::resource('tags', TagController::class)
 	->names('tags');
+
+    //rutas usuario
+    Route::get('user_posts', [PostUserController::class, 'index'])->name('user_posts');
+    Route::get('user_recipes', [PostUserController::class, 'recipes'])->name('user_recipes');
 });
 

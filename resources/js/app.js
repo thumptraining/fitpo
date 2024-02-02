@@ -1,3 +1,5 @@
+import Alpine from "alpinejs";
+
 // AlpineJS Plugins
 import persist from "@alpinejs/persist"; // @see https://alpinejs.dev/plugins/persist
 import collapse from "@alpinejs/collapse"; // @see https://alpinejs.dev/plugins/collapse
@@ -83,8 +85,6 @@ import inputMask from "./directives/inputMask";
 // Alpine Magic Functions
 import notification from "./magics/notification";
 import clipboard from "./magics/clipboard";
-
-
 
 
 // Register HTML, XML language for highlight.js

@@ -17,7 +17,13 @@ class ShowPost extends Component
     public function render()
     {
       
-        $posts = Post::where('status', 2)->take(4)->get();
+        $posts = Post::where('status', 2)
+        ->whereDoesntHave('category', function ($query) {
+            $query->where('slug', 'recipes');
+        })
+        ->take(4)
+        ->get();
+        
         return view('livewire.dashboard.show-post', compact('posts'));
     }
 }
